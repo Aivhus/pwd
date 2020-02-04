@@ -1,0 +1,251 @@
+/* BODY */
+html {
+    height: 100%;
+}
+body {
+    /*min-height: 100%;*/
+    margin: 0;
+    padding: 0;
+    background-color: #6c757d !important;
+}
+/*HEADER*/
+header{
+    height: 200px;
+    background-color: #0c5460;
+    width: 100%;
+}
+.logo_header{
+    width: 200px;
+    height: 200px;
+}
+.title_nav{
+    width: 450px;
+    text-align: center;
+    margin-left: 35%;
+    margin-top: -130px;
+    color: #fff;
+    font-family: 'Modak', cursive;
+    font-size: 60px;
+}
+.box_link{
+    width: 250px;
+    float: right;
+    margin-top: -59px;
+    margin-right: 37px;
+}
+
+/* CONTENT */
+
+#content{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: beige;
+}
+/*.container{
+    height: auto;
+}*/
+.button_top{
+    margin-left: 550px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+    font-family: 'Modak', cursive;
+    font-size: 40px !important;
+    margin-top: 30px;
+}
+.title_home{
+    margin-top: 30px;
+}
+.card{
+
+    margin-left: 30px;
+}
+.checked {
+    color: orange;
+}
+
+/* SEARCH PAGE */
+.custom-select{
+    width: 250px !important;
+    position: relative;
+}
+.one{
+    left: 200px;
+    top: 50px;
+}
+.two{
+    top: 50px;
+    left: 400px;
+}
+.three{
+    top: 220px;
+    right: 309px;
+}
+.four{
+    top: 220px;
+    right: 108px;
+}
+.search_button{
+    position: relative;
+    right: 500px;
+    top: 350px;
+}
+/* FOOTER */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.footer_main_div{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background: #272727;
+    padding: 20px 0px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+.footer_social_icons{
+    width: 100%;
+    height:auto;
+    margin: auto;
+}
+.footer_social_icons ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.footer_social_icons ul li{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border-radius: 100%;
+    background: #0c5460;
+}
+.footer_social_icons ul li a{
+    color: #272727;
+    font-size: 25px;
+    display: block;
+}
+.footer_social_icons ul li a i{
+    line-height: 50px;
+}
+footer{
+    color: #000;
+    margin-top: 20px;
+    text-align: center;
+}
+footer a{
+    color: #000;
+
+}
+.footer_link{
+    background-color: #0c5460;
+    width: 100%;
+    height:50px;
+    margin: auto;
+    position: relative;
+    left: 0;
+    bottom: -20px;
+}
+.left_list{
+    margin-top: 20px;
+}
+hr{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #1d2124;
+}
+.comments{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.button_place{
+    margin-left: 45%;
+}
+
+.comment_section{
+    margin: auto;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.logo_admin {
+    font-size: 12em !important;
+    margin-left: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.button_admin{
+    margin-left: 45px;
+}
+/* REGISTRATION FORM */
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color: #0c5460;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+/* OTHER */
+.clear{
+    clear: both;
+}
+label{
+    font-weight: bold !important;
+}

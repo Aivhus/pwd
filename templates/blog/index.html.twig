@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="button_top">
+        <button type="button" class="btn btn-secondary btn-lg" style="/*margin-right: 250px;*/ margin-top: 20px;"><a href="{{ path('search') }}">Search</a></button>
+
+        <!--<button type="button" class="btn btn-secondary btn-lg" style="margin-left: 150px; margin-top: 20px;">Contact</button>-->
+    </div>
+<section class="recettes">
+
+    {% for recette in recettes %}
+        <recette>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ recette.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recette.title }}</h5>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Ecrit le {{ recette.createdAt | date('d/m/y') }} 
+                            à {{ recette.createdAt | date('H:i') }}</li>
+                            <li class="list-group-item">{{ recette.step | raw }}</li>
+                        </ul>
+                    <div class="card-body">
+                        <a href="{{ path('blog_show', {'id': recette.id}) }}" class="card-link">Voir la recette</a>
+                    </div>
+            </div>
+        </recette>
+    {% endfor %}
+
+</section>          
+
+{% endblock %}

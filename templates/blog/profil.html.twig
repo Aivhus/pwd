@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1 class="title">Page Profil:</h1>
+
+    <div class="container">
+  <div class="row">
+    <div class="col-4">
+        <h2 class="title card-t">Mes infos :</h2>
+        <form class="user-card">
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nom d'utilisateur :</label>
+                </br>
+                <p>{{ app.user.username }}</p>
+            </div>
+
+            <div class="form-group left_list">
+                <label for="exampleFormControlTextarea1">adresse mail :</label>
+                </br>
+                <p>{{ app.user.email }}</p>
+            </div>
+        </form>    
+    </div>
+    <div class="col-8">
+        <h2 class="title comment-title">Activitées sur le site</h2>
+        <div class="scroll">
+      {% for comment in comments %}
+        <div id="list-example" class="list-group">
+            <a class="list-group-item list-group-item-action" href="{{ path('blog_show',{id: comment.recette.id}) }}">
+            {{ comment.recette.title }}</a>
+        </div>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+            <p>{{ comment.content }}</p>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+ 
+</div>
+
+{% endblock %}

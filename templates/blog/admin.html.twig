@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="admin">
+
+        <h1 class="title">Tableau d'administration</h1>
+
+        <div class="recepies box">
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Créer une nouvelle recette</h5>
+                    <p class="card-text"><i class="fa fa-plus-square logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('create') }}" class="btn btn-primary">Ajouter une Recette</a>
+                </div>
+            </div>
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Liste des recettes du site</h5>
+                    <p class="card-text"><i class="fa fa-book logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('modify') }}" class="btn btn-primary">Modifier une Recettes</a>
+                </div>
+            </div>
+        </div>  
+
+        <div class="user box">
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Liste des utilisateurs</h5>
+                    <p class="card-text"><i class="fa fa-users logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('user') }}" class="btn btn-primary">Voir les utilisateurs</a>
+                </div>
+            </div>
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des Commentaire</h5>
+                    <p class="card-text"><i class="fa fa-comments logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('comment') }}" class="btn btn-primary">Ajouter une Recette</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category box">
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">ajouter une catégories</h5>
+                    <p class="card-text"><i class="fa fa-users logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('createCategory') }}" class="btn btn-primary">Ajouter une catégories</a>
+                </div>
+            </div>
+            <div class="card text-center pos" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des catégories</h5>
+                    <p class="card-text"><i class="fa fa-list-ul logo_admin" aria-hidden="true"></i></p>
+                    <a href="{{ path('category') }}" class="btn btn-primary">liste des catégories</a>
+                </div>
+            </div>
+        </div>                 
+
+
+            {# <div class="row">
+                <div class="col-sm">
+                    <i class="fa fa-plus-square logo_admin" aria-hidden="true"></i>
+                    <a href="{{ path('create') }}" target="_blank"><button type="button" class="btn btn-secondary btn-lg button_admin">
+                    Ajouter Recette</button></a>
+                </div>
+                <div class="col-sm">
+                    <i class="fa fa-book logo_admin" aria-hidden="true"></i>
+                    <a href="{{ path('modify') }}" target="_blank"><button type="button" class="btn btn-secondary btn-lg button_admin">
+                    Modifier Recettes</button></a>
+                </div>
+                <div class="col-sm">
+                    <i class="fa fa-comments logo_admin" aria-hidden="true"></i>
+                    <a href="{{ path('comment') }}" target="_blank"><button type="button" class="btn btn-secondary btn-lg button_admin">
+                    Commentaires</button></a>
+                </div>
+                <div class="col-sm">
+                    <i class="fa fa-sign-out logo_admin" aria-hidden="true"></i>
+                    <a href="{{ path('home') }}"><button type="button" class="btn btn-secondary btn-lg button_admin">
+                    Log Out</button></a>
+                </div>
+            </div> #}
+    </div>
+
+{% endblock %}

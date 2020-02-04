@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formRecette 'bootstrap_4_layout.html.twig' %}    
+
+{% block body %}
+
+    {% if editMode %}
+        <h1 class="title">Modification de la recette</h1>
+    {% else %}    
+        <h1 class="title">Création de la recette</h1>
+    {% endif %}
+
+    <div class="form">
+    {{ form_start(formRecette) }}
+    
+    {{ form_row(formRecette.title, {'label': 'Nom de la recette', 'attr': 
+    {'placeholder': "Nom de la recette"}}) }}
+    {{ form_row(formRecette.ingredient, {'label': 'Liste des ingrédients', 'attr': 
+    {'placeholder': "Liste des ingrédients"}}) }}
+    {{ form_row(formRecette.step, {'label': 'Instructions de préparation', 'attr': 
+    {'placeholder': "Instructions de préparation"}}) }}
+    {{ form_row(formRecette.image, {'label': 'Photo du plat', 'attr': 
+    {'placeholder': "Photo de présentation (URL de l'image)"}}) }}
+
+    {{ form_row(formRecette.category) }}
+
+    <button type="submit" class="btn btn-secondary">
+        {% if editMode %}
+            Enregistrer les modifications
+        {% else %}    
+            Ajouter la recette</button>
+        {% endif %}    
+    
+    {{ form_end(formRecette) }}
+    </div>
+{% endblock %}

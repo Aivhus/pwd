@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{#     {% if app.user %}
+        <a class="btn btn-secondary btn-lg button_top" href="{{ path('search') }}">Search</a>
+    {% else %}
+        <h2>Inscrivez-vous et connectez vous pour accéder à la fonction recherche</h2>    
+    {% endif %} #}
+<section class="recettes">
+<recette>
+    <div class="row">    
+    {% for recette in recettes %}        
+        <div class="col">
+            <div class="card position" style="width: 16rem;">
+                <img src="{{ asset('uploads/' ~ recette.image)}}" class="card-img-top" alt="#">
+                <div class="card-body">
+                    <h5 class="card-title">{{ recette.title }}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Ecrit le {{ recette.createdAt | date('d/m/y') }} 
+                        à {{ recette.createdAt | date('H:i') }}
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{ path('blog_show', {'id': recette.id}) }}" class="card-link">Voir la recette</a>
+                </div>
+            </div>
+        </div>         
+    {% endfor %}    
+    </div>
+        </recette>
+
+</section>          
+
+{% endblock %}

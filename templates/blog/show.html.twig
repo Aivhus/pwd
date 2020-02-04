@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+
+                <img class="img_read" src="{{ asset('uploads/' ~ recette.image)}}" alt="#" width="450px" height="300px">
+
+                <div class="form-group">
+                    </br>
+                    <label for="exampleFormControlInput1">Créer le : {{ recette.createdAt | date('d/m/Y') }} 
+                    à {{ recette.createdAt | date('H:i') }} dans la catégorie {{recette.category.title}} </label>
+                </div>
+
+            </div>
+            <div class="col-7">
+                <form class="list">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"><h2 class="title name">Recette :</h2></label>
+                        </br>
+                        <p>{{ recette.title }}</p>
+                    </div>
+
+                    <div class="form-group left_list">
+                        <label for="exampleFormControlTextarea1"><h2 class="title name">Ingrédients :</h2></label>
+                        </br>
+                        <p>{{ recette.ingredient | raw }}</p>
+                    </div>
+                </form>
+            </div>
+                    <div class="step_form">
+                        <label for="exampleFormControlInput1"><h2 class="title step">Etapes de préparations :</h2></label>
+                        </br>
+                        <p>{{ recette.step | raw }}</p>   
+                    </div>
+
+            <div class="comment_section">
+
+                {% if app.user %}
+                    <h2 class="title">Donnez nous votre avis ici !</h2>
+                    {{ form_start(commentForm) }}
+                    {{ form_row(commentForm.Username, {'attr': {'placeholder' : "Votre nom"}})}}
+                    {{ form_row(commentForm.content, {'attr': {'placeholder' : "Votre commentaire"}})}}
+                    <button type="submit" class="btn btn-secondary btn-lg button_place">Send Post</button>
+                    {{ form_end(commentForm) }}
+                    {% else %}
+                        <h2 class="title">Vous ne pouvez commenter que si vous êtes connecter</h2>
+                        <a href="{{path('security_login')}}" class="btn btn-secondary">
+                            Connexion
+                        </a>
+                {% endif %}
+                </br>
+                <h1>{{ recette.comments | length }} commentaires :</h1>
+                {% for comment in recette.comments %}
+                    <div class="comment">
+
+                        <div class="card">
+                            <h5 class="card-header">{{comment.username}}</h5>
+                        <div class="card-body">
+                            <p class="card-text comment_view">Ecrit le :{{ comment.createdAt | date('d/m/Y') }} 
+                            à {{ comment.createdAt | date('H:i') }}</p>
+                            <p class="card-text comment_view">{{comment.content | raw}}</p>
+                        </div>
+                        </div>
+
+{#                         <div class="row">
+                            <div class="col-3">
+                               <p class="comment_view"> {{comment.username}} (<small>{{ comment.createdAt | date('d/m/Y') }} 
+                            à {{ comment.createdAt | date('H:i') }})</p>
+                            </div>
+                            <div class="col">
+                               <p class="comment_view"> {{comment.content | raw}}</p>
+                            </div>
+                        </div>   #}  
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div><!-- FIN DE LA CLASS CONTAINER -->
+{% endblock %}
