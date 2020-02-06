@@ -278,7 +278,6 @@ class BlogController extends AbstractController
         $user = $this->getUser();
         //permet de trouver les commentaires de la db associé à l'id de l'utilisateur et de les afficher sur la page profil
         $userComments = $commentRepo->findAllByUser($user);
-        dump($userComments);
         return $this->render('blog/profil.html.twig', [
             'user' => $user,
             'comments'=> $userComments
